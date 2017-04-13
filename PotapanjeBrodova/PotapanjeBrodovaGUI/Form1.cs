@@ -28,19 +28,20 @@ namespace PotapanjeBrodovaGUI
                 {
                     Controls.Remove(i);
                 }
+                foreach (Label i in labelContainer)
+                {
+                    Controls.Remove(i);
+                }
+                labelContainer.Clear();
             }
             poljaPrikaz = new PictureBox[retci, stupci];
+            labelContainer = new Stack<Label>();
             xPozicijaPolja = defaultX;
             yPozicijaPolja = defaultY;
             foreach (Polje i in mreza.polja)
             {
-                poljaPrikaz[i.Redak, i.Stupac] = new PictureBox();
-                poljaPrikaz[i.Redak, i.Stupac].Size = velicinaPolja;
-                poljaPrikaz[i.Redak, i.Stupac].Location = new Point(xPozicijaPolja, yPozicijaPolja);
-                poljaPrikaz[i.Redak, i.Stupac].BackColor = Color.Black;
-                poljaPrikaz[i.Redak, i.Stupac].BringToFront();
-                poljaPrikaz[i.Redak, i.Stupac].Visible = true;
-                Controls.Add(poljaPrikaz[i.Redak, i.Stupac]);
+                DodajPoljeNaMrežu(i.Redak, i.Stupac);
+                DodajBrojRetkaiStupcaNaMrežu(i.Redak, i.Stupac);
 
                 if (i.Stupac < stupci - 1)
                 {
@@ -54,6 +55,49 @@ namespace PotapanjeBrodovaGUI
             }
             porukeLabel.Text = "Mreža veličine " + retci + " x " + stupci + " iscratana";
             porukeLabel.Visible = true;
+
+        }
+        private void DodajPoljeNaMrežu(int redak, int stupac)
+        {
+            poljaPrikaz[redak, stupac] = new PictureBox();
+            poljaPrikaz[redak, stupac].Size = velicinaPolja;
+            poljaPrikaz[redak, stupac].Location = new Point(xPozicijaPolja, yPozicijaPolja);
+            poljaPrikaz[redak, stupac].BackColor = Color.Black;
+            poljaPrikaz[redak, stupac].BringToFront();
+            poljaPrikaz[redak, stupac].Visible = true;
+            Controls.Add(poljaPrikaz[redak, stupac]);
+        }
+        private void DodajBrojRetkaiStupcaNaMrežu(int redak, int stupac)
+        {
+            Label number = new Label();
+            number.Size = velicinaPolja;
+            if (redak == 0)
+            {
+                if (stupac == 0)
+                {
+                    Label left = new Label();
+                    left.Size = velicinaPolja;
+                    left.Location = new Point(xPozicijaPolja - offsetPolja, yPozicijaPolja);
+                    left.Text = (redak + 1).ToString();
+                    PostavkeLabele(left);
+                }
+                number.Location = new Point(xPozicijaPolja, defaultY - offsetPolja);
+                number.Text = (stupac + 1).ToString();
+            }
+            else
+            {
+                number.Location = new Point(defaultX - offsetPolja, yPozicijaPolja);
+                number.Text = (redak + 1).ToString();
+            }
+            PostavkeLabele(number);
+        }
+        private void PostavkeLabele(Label name)
+        {
+            name.TextAlign = ContentAlignment.MiddleCenter;
+            name.BringToFront();
+            name.Visible = true;
+            Controls.Add(name);
+            labelContainer.Push(name);
 
         }
         private void Nacrtajbrodove()
@@ -78,7 +122,8 @@ namespace PotapanjeBrodovaGUI
                  
             }
             postaviBrodoveButton.Enabled = false;
-
+            porukeLabel.Text = "Flota postavljena!";
+            porukeLabel.Visible = true;
         }
 
         private void Start_Click(object sender, EventArgs e)
@@ -107,6 +152,7 @@ namespace PotapanjeBrodovaGUI
         int defaultX = 120;
         int defaultY = 75;
         private PictureBox[,] poljaPrikaz;
+        private Stack<Label> labelContainer;
 
     }
 }
