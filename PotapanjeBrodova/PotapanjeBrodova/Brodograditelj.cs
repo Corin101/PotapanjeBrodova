@@ -11,19 +11,30 @@ namespace PotapanjeBrodova
         {
             Flota flota = new Flota();
             TerminatorPolja termi = new TerminatorPolja(mreža);
-
-            foreach (int i in duljinaBrodova)
+            int pokusaj = 0;
+            for (; pokusaj < 5;pokusaj++)
             {
-                var nizovi = mreža.DajNizoveSlobodnihPolja(i);
-                int index = slucajniBrojevi.Next(nizovi.Count());
-                var niz = nizovi.ElementAt(index);
-                flota.DodajBrod(niz);
-                termi.UkloniPolja(niz);
+                bool uspjesnoPostavljeniBrodovi = true;
+                foreach (int i in duljinaBrodova)
+                {
+                    var nizovi = mreža.DajNizoveSlobodnihPolja(i);
+                    if (nizovi.Count() == 0)
+                    {
+                        uspjesnoPostavljeniBrodovi = false;
+                        break;
+                    }
+                    int index = slucajniBrojevi.Next(nizovi.Count());
+                    var niz = nizovi.ElementAt(index);
+                    flota.DodajBrod(niz);
+                    termi.UkloniPolja(niz);
+                }
+                if (uspjesnoPostavljeniBrodovi == true)
+                {
+                    break;
+                }            
             }
-            return flota;
+            return pokusaj < 5 ? flota : null;
         }
-
-        // TODO obratiti paznju za slucaj da se ne mogu svi brodovi sloziti.
 
         private Random slucajniBrojevi = new Random();
     }
