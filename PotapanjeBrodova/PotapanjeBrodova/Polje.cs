@@ -29,5 +29,12 @@ namespace PotapanjeBrodova
                 return false;
             return Equals((Polje)obj);
         }
+        public override int GetHashCode()
+        {
+                int hash = 17;
+                hash = hash * 23;
+                hash = hash * 17; 
+                return hash;
+        }
     }
 }
