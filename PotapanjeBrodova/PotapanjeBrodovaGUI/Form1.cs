@@ -17,6 +17,7 @@ namespace PotapanjeBrodovaGUI
         public Form1()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void NacrtajMrezu()
@@ -26,11 +27,11 @@ namespace PotapanjeBrodovaGUI
             {
                 foreach (PictureBox i in poljaPrikaz)
                 {
-                    Controls.Remove(i);
+                    glavniPanel.Controls.Remove(i);
                 }
                 foreach (Label i in labelContainer)
                 {
-                    Controls.Remove(i);
+                    glavniPanel.Controls.Remove(i);
                 }
                 labelContainer.Clear();
             }
@@ -65,7 +66,7 @@ namespace PotapanjeBrodovaGUI
             poljaPrikaz[redak, stupac].BackColor = Color.Black;
             poljaPrikaz[redak, stupac].BringToFront();
             poljaPrikaz[redak, stupac].Visible = true;
-            Controls.Add(poljaPrikaz[redak, stupac]);
+            glavniPanel.Controls.Add(poljaPrikaz[redak, stupac]);
         }
         private void DodajBrojRetkaiStupcaNaMrežu(int redak, int stupac)
         {
@@ -96,7 +97,7 @@ namespace PotapanjeBrodovaGUI
             name.TextAlign = ContentAlignment.MiddleCenter;
             name.BringToFront();
             name.Visible = true;
-            Controls.Add(name);
+            glavniPanel.Controls.Add(name);
             labelContainer.Push(name);
 
         }
@@ -109,6 +110,7 @@ namespace PotapanjeBrodovaGUI
             {
                 porukeLabel.Text = "Flotu nije moguće složiti u trenutačnu veličinu mreže!";
                 porukeLabel.Visible = true;
+                brodograditelj = null;
                 return;
             }
 
@@ -149,8 +151,8 @@ namespace PotapanjeBrodovaGUI
         int offsetPolja = 41;
         int xPozicijaPolja;
         int yPozicijaPolja;
-        int defaultX = 120;
-        int defaultY = 75;
+        int defaultX = 45;
+        int defaultY = 45;
         private PictureBox[,] poljaPrikaz;
         private Stack<Label> labelContainer;
 

@@ -12,7 +12,7 @@ namespace PotapanjeBrodova
             Flota flota = new Flota();
             TerminatorPolja termi = new TerminatorPolja(mreža);
             int pokusaj = 0;
-            for (; pokusaj < 5;pokusaj++)
+            for (; pokusaj < brojPokusaja;pokusaj++)
             {
                 bool uspjesnoPostavljeniBrodovi = true;
                 foreach (int i in duljinaBrodova)
@@ -33,9 +33,10 @@ namespace PotapanjeBrodova
                     break;
                 }            
             }
-            return pokusaj < 5 ? flota : null;
+            return pokusaj < brojPokusaja ? flota : null;
         }
 
+        private int brojPokusaja = 15;
         private Random slucajniBrojevi = new Random();
     }
 }
