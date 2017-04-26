@@ -47,9 +47,10 @@ namespace PotapanjeBrodovaGUI
             // Start
             // 
             this.Start.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Start.Location = new System.Drawing.Point(740, 51);
+            this.Start.Location = new System.Drawing.Point(555, 41);
+            this.Start.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Start.Name = "Start";
-            this.Start.Size = new System.Drawing.Size(120, 30);
+            this.Start.Size = new System.Drawing.Size(90, 24);
             this.Start.TabIndex = 0;
             this.Start.Text = "Složi Mrežu";
             this.Start.UseVisualStyleBackColor = false;
@@ -58,24 +59,27 @@ namespace PotapanjeBrodovaGUI
             // brojRedakaLabel
             // 
             this.brojRedakaLabel.AutoSize = true;
-            this.brojRedakaLabel.Location = new System.Drawing.Point(21, 60);
+            this.brojRedakaLabel.Location = new System.Drawing.Point(16, 49);
+            this.brojRedakaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.brojRedakaLabel.Name = "brojRedakaLabel";
-            this.brojRedakaLabel.Size = new System.Drawing.Size(94, 17);
+            this.brojRedakaLabel.Size = new System.Drawing.Size(72, 13);
             this.brojRedakaLabel.TabIndex = 1;
             this.brojRedakaLabel.Text = "Broj Redaka::";
             // 
             // brojStupacaLabel
             // 
             this.brojStupacaLabel.AutoSize = true;
-            this.brojStupacaLabel.Location = new System.Drawing.Point(275, 60);
+            this.brojStupacaLabel.Location = new System.Drawing.Point(206, 49);
+            this.brojStupacaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.brojStupacaLabel.Name = "brojStupacaLabel";
-            this.brojStupacaLabel.Size = new System.Drawing.Size(97, 17);
+            this.brojStupacaLabel.Size = new System.Drawing.Size(74, 13);
             this.brojStupacaLabel.TabIndex = 2;
             this.brojStupacaLabel.Text = "Broj Stupaca::";
             // 
             // brojStupacaOdabir
             // 
-            this.brojStupacaOdabir.Location = new System.Drawing.Point(378, 55);
+            this.brojStupacaOdabir.Location = new System.Drawing.Point(284, 45);
+            this.brojStupacaOdabir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.brojStupacaOdabir.Maximum = new decimal(new int[] {
             15,
             0,
@@ -87,7 +91,7 @@ namespace PotapanjeBrodovaGUI
             0,
             0});
             this.brojStupacaOdabir.Name = "brojStupacaOdabir";
-            this.brojStupacaOdabir.Size = new System.Drawing.Size(120, 22);
+            this.brojStupacaOdabir.Size = new System.Drawing.Size(90, 20);
             this.brojStupacaOdabir.TabIndex = 3;
             this.brojStupacaOdabir.Value = new decimal(new int[] {
             10,
@@ -97,7 +101,8 @@ namespace PotapanjeBrodovaGUI
             // 
             // brojRedakaOdabir
             // 
-            this.brojRedakaOdabir.Location = new System.Drawing.Point(121, 55);
+            this.brojRedakaOdabir.Location = new System.Drawing.Point(91, 45);
+            this.brojRedakaOdabir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.brojRedakaOdabir.Maximum = new decimal(new int[] {
             15,
             0,
@@ -109,7 +114,7 @@ namespace PotapanjeBrodovaGUI
             0,
             0});
             this.brojRedakaOdabir.Name = "brojRedakaOdabir";
-            this.brojRedakaOdabir.Size = new System.Drawing.Size(120, 22);
+            this.brojRedakaOdabir.Size = new System.Drawing.Size(90, 20);
             this.brojRedakaOdabir.TabIndex = 4;
             this.brojRedakaOdabir.Value = new decimal(new int[] {
             10,
@@ -120,9 +125,10 @@ namespace PotapanjeBrodovaGUI
             // porukeLabel
             // 
             this.porukeLabel.AutoSize = true;
-            this.porukeLabel.Location = new System.Drawing.Point(275, 15);
+            this.porukeLabel.Location = new System.Drawing.Point(206, 12);
+            this.porukeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.porukeLabel.Name = "porukeLabel";
-            this.porukeLabel.Size = new System.Drawing.Size(46, 17);
+            this.porukeLabel.Size = new System.Drawing.Size(35, 13);
             this.porukeLabel.TabIndex = 5;
             this.porukeLabel.Text = "label1";
             this.porukeLabel.Visible = false;
@@ -131,9 +137,10 @@ namespace PotapanjeBrodovaGUI
             // 
             this.postaviBrodoveButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.postaviBrodoveButton.Enabled = false;
-            this.postaviBrodoveButton.Location = new System.Drawing.Point(599, 51);
+            this.postaviBrodoveButton.Location = new System.Drawing.Point(449, 41);
+            this.postaviBrodoveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.postaviBrodoveButton.Name = "postaviBrodoveButton";
-            this.postaviBrodoveButton.Size = new System.Drawing.Size(120, 30);
+            this.postaviBrodoveButton.Size = new System.Drawing.Size(90, 24);
             this.postaviBrodoveButton.TabIndex = 6;
             this.postaviBrodoveButton.Text = "Postavi Brodove";
             this.postaviBrodoveButton.UseVisualStyleBackColor = false;
@@ -150,9 +157,10 @@ namespace PotapanjeBrodovaGUI
             this.controlPanel.Controls.Add(this.brojStupacaLabel);
             this.controlPanel.Controls.Add(this.brojRedakaOdabir);
             this.controlPanel.Controls.Add(this.brojStupacaOdabir);
-            this.controlPanel.Location = new System.Drawing.Point(6, 707);
+            this.controlPanel.Location = new System.Drawing.Point(2, 516);
+            this.controlPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.controlPanel.Name = "controlPanel";
-            this.controlPanel.Size = new System.Drawing.Size(880, 96);
+            this.controlPanel.Size = new System.Drawing.Size(660, 78);
             this.controlPanel.TabIndex = 8;
             // 
             // glavniPanel
@@ -162,23 +170,22 @@ namespace PotapanjeBrodovaGUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.glavniPanel.AutoSize = true;
             this.glavniPanel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.glavniPanel.Location = new System.Drawing.Point(6, 2);
+            this.glavniPanel.Location = new System.Drawing.Point(4, 2);
             this.glavniPanel.Margin = new System.Windows.Forms.Padding(0);
             this.glavniPanel.Name = "glavniPanel";
-            this.glavniPanel.Size = new System.Drawing.Size(880, 699);
+            this.glavniPanel.Size = new System.Drawing.Size(660, 571);
             this.glavniPanel.TabIndex = 7;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(890, 815);
-            this.Controls.Add(this.glavniPanel);
+            this.ClientSize = new System.Drawing.Size(669, 605);
             this.Controls.Add(this.controlPanel);
-            this.MinimumSize = new System.Drawing.Size(908, 211);
+            this.Controls.Add(this.glavniPanel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.brojStupacaOdabir)).EndInit();

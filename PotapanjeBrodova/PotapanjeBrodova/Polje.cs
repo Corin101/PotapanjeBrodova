@@ -31,10 +31,7 @@ namespace PotapanjeBrodova
         }
         public override int GetHashCode()
         {
-                int hash = 17;
-                hash = hash * 23;
-                hash = hash * 17; 
-                return hash;
+            return Redak ^ Stupac >> 16;
         }
     }
 }
