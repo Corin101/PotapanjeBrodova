@@ -9,11 +9,11 @@ namespace PotapanjeBrodova
     {
 
 
-        public KružniPucač(Mreža mreza, Polje pogođeno, int duljinaPolja)
+        public KružniPucač(Mreža mreza, Polje pogođeno, int duljinaBroda)
         {
             this.mreza = mreza;
             prvoPogođenoPolje = pogođeno;
-            this.duljinaBroda = duljinaPolja;
+            this.duljinaBroda = duljinaBroda;
         }
 
         public IEnumerable<Polje> PogođenaPolja
